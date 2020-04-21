@@ -1,0 +1,18 @@
+language: elixir
+elixir:
+  - 1.6.0
+  - 1.6.5
+  - 1.7.3
+otp_release:
+  - 20.3
+sudo: false
+env:
+  - MIX_ENV=test POSTGRES_USER=postgres POSTGRES_PASSWORD=
+script:
+  - mix test
+after_script:
+  - mix hex.audit
+  - mix coveralls.travis
+  - mix credo
+  - mix deps.get --only docs
+  - MIX_ENV=docs mix inch.report
