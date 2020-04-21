@@ -2,7 +2,7 @@ defmodule Rummage.Ecto.Mixfile do
   use Mix.Project
 
   @version "2.0.0-rc.0"
-  @elixir "~> 1.6"
+  @elixir "~> 1.8.0"
   @url "https://github.com/annkissam/rummage_ecto"
 
   def project do
@@ -51,7 +51,7 @@ defmodule Rummage.Ecto.Mixfile do
   defp deps do
     [
       # Development Dependency
-      {:ecto, "~> 2.2"},
+      {:ecto, "~> 3.0"},
 
       # Other Dependencies
       {:credo, "~> 0.9.1", only: [:dev, :test], runtime: false},
