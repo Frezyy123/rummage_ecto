@@ -151,7 +151,7 @@ defmodule Rummage.Ecto do
       #Ecto.Query<from p in Rummage.Ecto.Product, limit: ^1, offset: ^0>
 
   """
-  @spec rummage(Ecto.Query.t(), map(), Keyword.t()) :: {Ecto.Query.t(), map()}
+  @spec rummage(Ecto.Schema.t(), map(), Keyword.t()) :: {Ecto.Query.t(), map()}
   def rummage(queryable, rummage, opts \\ []) do
     hooks = [search: Keyword.get(opts, :search, RConfig.search()),
              sort: Keyword.get(opts, :sort, RConfig.sort()),
